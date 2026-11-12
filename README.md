@@ -7,6 +7,10 @@ Cette application a pour but de répondre aux besoins croissants des navires et 
 
 ** Cette application est gratuite est open source**
 
+
+** Voici le lien pour tester https://indomptablebar.github.io/IndomptableAIS/ **
+
+
 **Suivi des navires en temps réel par AIS** : un tableau de bord dans le navigateur, avec une carte, les traces horodatées, une zone surveillée (estuaire de la Loire par défaut) et la surveillance de navires dans la durée. Les données peuvent venir de votre propre récepteur SDR (SDRplay RSP1), de réseaux ouverts ou communautaires, ou de fournisseurs commerciaux, terrestres comme satellites.
 
 Le projet tient en **deux fichiers**, sans dépendance à installer :
