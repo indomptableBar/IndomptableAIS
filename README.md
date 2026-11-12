@@ -1,5 +1,8 @@
 # Indomptable AIS
 
+<img src="logo_indomptablebar_ais.png" align="center"/>
+
+
 **Suivi des navires en temps réel par AIS** : un tableau de bord dans le navigateur, avec une carte, les traces horodatées, une zone surveillée (estuaire de la Loire par défaut) et la surveillance de navires dans la durée. Les données peuvent venir de votre propre récepteur SDR (SDRplay RSP1), de réseaux ouverts ou communautaires, ou de fournisseurs commerciaux, terrestres comme satellites.
 
 Le projet tient en **deux fichiers**, sans dépendance à installer :
