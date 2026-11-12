@@ -341,7 +341,11 @@ node test/relay.test.mjs         # tests du relais (TCP, UDP, listes d'autorisat
 
 ## Licence
 
-À définir par l'auteur du dépôt (par exemple MIT). Les données et fonds de carte restent soumis aux conditions de leurs fournisseurs respectifs (voir ci-dessous) ; affichez leurs attributions.
+<img src="logo.png" align="center"/>
+
+IndomptablebarAIS est sous LGPL.
+
+Les données et fonds de carte restent soumis aux conditions de leurs fournisseurs respectifs (voir ci-dessous) ; 
 
 ---
 
