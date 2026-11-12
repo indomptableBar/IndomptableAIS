@@ -1,0 +1,65 @@
+# Déploiement de l'application Indomptablebar AIS sur GitHub Pages
+name: Deploy Indomptablebar AIS to Pages
+ 
+on:
+  # Se lance à chaque push sur la branche principale
+  push:
+    branches: ["main"]
+ 
+  # Permet de lancer le workflow manuellement depuis l'onglet Actions
+  workflow_dispatch:
+ 
+# Permissions du GITHUB_TOKEN pour le déploiement sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+ 
+# Un seul déploiement à la fois, sans annuler celui en cours
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+ 
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+ 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+ 
+      # Prépare un dossier _site ne contenant que les fichiers publics.
+      # ais-relay.mjs (serveur Node) et README.md ne sont PAS publiés.
+      - name: Build site folder
+        run: |
+          set -e
+          mkdir -p _site
+ 
+          # Page principale : servie à la racine (index.html)
+          # et conservée sous son nom d'origine pour les liens existants
+          cp Indomptablebar-AIS.html _site/index.html
+          cp Indomptablebar-AIS.html _site/Indomptablebar-AIS.html
+ 
+          # Images
+          cp logo.png _site/
+          cp logo_indomptablebar_ais.png _site/
+ 
+          # Désactive le traitement Jekyll
+          touch _site/.nojekyll
+ 
+          echo "Contenu publié :"
+          ls -la _site
+ 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+ 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
