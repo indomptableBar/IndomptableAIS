@@ -1,6 +1,6 @@
 # Indomptable AIS
 
-Cette application a pour but de répondre aux besoin croissant des navires et des ports. Il est gratuit
+Cette application a pour but de répondre aux besoins croissants des navires et des ports. Il est gratuit
 
 <img src="logo_indomptablebar_ais.png" align="center"/>
 
